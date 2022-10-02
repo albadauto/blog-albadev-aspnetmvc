@@ -1,0 +1,50 @@
+﻿@model UserModel
+
+<div class="form-control bg-light mt-lg-5">
+    <div class="row ">
+        <div class="col text-center">
+            <h4 class="display-6">Bem vindo(a) ao blog do Dautin, crie sua conta</h4>
+        </div>
+        <form method="post" asp-controller="CreateAccount" asp-action="CreateNewUser">
+            <div class="row">
+                <div class="col">
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" asp-for="Email">
+                        <label for="floatingInput">Email</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" asp-for="Password">
+                        <label for="floatingPassword">Senha</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col">
+
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Repita a senha</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Username" asp-for="Username">
+                        <label for="floatingPassword">Username</label>
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2 mb-5">
+                <button class="btn btn-success" type="submit">Registrar-se</button>
+                <button class="btn btn-secondary" type="button">Logar na minha conta</button>
+            </div>
+        </form>
+        @if(TempData["success"] != null)
+        {
+            <p>@TempData["success"]</p>
+        }
+    </div>
+</div>
