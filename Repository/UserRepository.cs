@@ -16,11 +16,24 @@ namespace BlogDoDautin.Repository
             try
             {
                 _databaseContext.User.Add(model);
+                _databaseContext.SaveChanges();
                 return model;
             }
             catch (Exception err)
             {
                 throw new Exception(err.ToString());
+            }
+        }
+
+        public UserModel verifyLogin(UserModel model)
+        {
+            try
+            {
+                var result = _databaseContext.User.FirstOrDefault(o => o.Email == model.Email && o.Password == model.Password);
+                return result;
+            }catch(Exception error)
+            {
+                throw new Exception(error.ToString());
             }
         }
     }

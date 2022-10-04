@@ -9,6 +9,7 @@ string context = builder.Configuration.GetConnectionString("Database");
 builder.Services.AddControllersWithViews();
 builder.Services.AddEntityFrameworkSqlServer().AddDbContext<DatabaseContext>(options => options.UseSqlServer(context));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddSession(options => 
 {
     options.IdleTimeout = TimeSpan.FromHours(8);

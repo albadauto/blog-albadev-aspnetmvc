@@ -32,19 +32,23 @@
                 </div>
                 <div class="col">
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Username" asp-for="Username">
+                        <input type="text" class="form-control" id="floatingPassword" placeholder="Username" asp-for="Username">
                         <label for="floatingPassword">Username</label>
                     </div>
                 </div>
             </div>
             <div class="d-grid gap-2 mb-5">
                 <button class="btn btn-success" type="submit">Registrar-se</button>
-                <button class="btn btn-secondary" type="button">Logar na minha conta</button>
+                <a class="btn btn-secondary" asp-controller="Login" asp-action="Index">Logar na minha conta</a>
             </div>
+            @if (TempData["success"] != null)
+            {
+                <div class="alert alert-success">
+                    <p>@TempData["success"]</p>
+
+                </div>
+            }
         </form>
-        @if(TempData["success"] != null)
-        {
-            <p>@TempData["success"]</p>
-        }
+        
     </div>
 </div>
