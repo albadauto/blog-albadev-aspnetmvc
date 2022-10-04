@@ -32,6 +32,9 @@
                         @if(session != null)
                         {
                             <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="News" asp-action="Index">Criar novo post</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-controller="Login" asp-action="RemoveSession">Logoff</a>
                             </li>
                         }else
