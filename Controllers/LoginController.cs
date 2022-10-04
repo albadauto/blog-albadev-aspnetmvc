@@ -24,7 +24,7 @@ namespace BlogDoDautin.Controllers
                 var result = _repository.verifyLogin(user);
                 if(result != null)
                 {
-                    HttpContext.Session.SetString("email", user.Email);
+                    HttpContext.Session.SetString("id_user", result.Id.ToString());
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -42,7 +42,7 @@ namespace BlogDoDautin.Controllers
 
         public IActionResult RemoveSession()
         {
-            HttpContext.Session.Remove("email");
+            HttpContext.Session.Remove("id_user");
             return RedirectToAction("Index");
         }
     }

@@ -1,4 +1,5 @@
-﻿using BlogDoDautin.Models;
+﻿using BlogDoDautin.Data.Map;
+using BlogDoDautin.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlogDoDautin.Context
@@ -10,5 +11,9 @@ namespace BlogDoDautin.Context
         }
 
         public DbSet<UserModel> User { get; set; }
+        public DbSet<NewsModel> News { get; set; }
+
+      
+      
     }
 }

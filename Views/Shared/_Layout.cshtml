@@ -2,7 +2,7 @@
 <html lang="en">
 @inject IHttpContextAccessor context;
 @{
-    var session = context.HttpContext.Session.GetString("email");
+    var session = context.HttpContext.Session.GetString("id_user");
 }
 <head>
     <meta charset="utf-8" />
