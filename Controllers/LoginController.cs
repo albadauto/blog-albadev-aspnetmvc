@@ -24,6 +24,7 @@ namespace BlogDoDautin.Controllers
                 var result = _repository.verifyLogin(user);
                 if(result != null)
                 {
+                    //Id do usuário na sessão SEMPRE deverá ser do tipo INT
                     HttpContext.Session.SetInt32("id_user", result.Id);
                     return RedirectToAction("Index", "Home");
                 }
