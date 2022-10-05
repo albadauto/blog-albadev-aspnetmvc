@@ -4,7 +4,7 @@
 
 namespace BlogDoDautin.Migrations
 {
-    public partial class NewsRelations : Migration
+    public partial class PostRelation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

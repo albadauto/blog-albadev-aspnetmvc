@@ -13,6 +13,7 @@ namespace BlogDoDautin.Controllers
         }
         public IActionResult Index()
         {
+           
             return View();
         }
 

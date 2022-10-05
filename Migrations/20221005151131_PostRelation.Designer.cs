@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogDoDautin.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221004193734_NewsRelations")]
-    partial class NewsRelations
+    [Migration("20221005151131_PostRelation")]
+    partial class PostRelation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
