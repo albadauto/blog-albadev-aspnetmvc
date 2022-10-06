@@ -24,7 +24,6 @@ namespace BlogDoDautin.Repository
                 throw new Exception(err.ToString());
             }
         }
-
         public UserModel verifyLogin(UserModel model)
         {
             try

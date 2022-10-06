@@ -5,12 +5,33 @@
 @{
    
 }
+
 @if(Model.Any()){
-    @foreach (NewsModel post in Model)
-    {
-        <p>@post.Title</p>
-        <p>Opa</p>
-    }
+    <div class="text-center">
+        <h3>Meus posts</h3>
+    </div>
+    <table class="table table-striped table-hover table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Descrição</th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (NewsModel post in Model)
+        {
+                <tr>
+                    <td>@post.Id</td>
+                    <td>@post.Title</td>
+                    <td>@post.Description</td>
+                    <td>
+                        <button class="btn btn-primary">Editar</button>
+                        <button class="btn btn-danger">Excluir</button>
+                    </td>
+                </tr>
+        }
+    </table>
 }else
 {
     <p>Não tem nada</p>

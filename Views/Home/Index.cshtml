@@ -1,24 +1,29 @@
-﻿@{
+﻿@model List<NewsModel>
+@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="card-subtitle text-center">
+<div class="card-subtitle text-center mb-3">
     <h1 class="display-4 ">Blog Do Dautin</h1>
     <h5 class="fw-bold">Últimas Notícias</h5>
 
 </div>
+@if(Model != null)
+{
+    @foreach(var news in Model)
+    {
+        
 
-<div class="card mb-3">
-    <h5 class="card-header">Tipo da Notícia</h5>
-    <div class="card-body">
-        <h5 class="card-title fw-bold">Título da Noticia</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Confira Já!</a>
-    </div>
-</div>
+        <div class="card mb-3">
+            <h5 class="card-header">@news.Title</h5>
+            <div class="card-body">
+                <p class="card-text">@news.Description</p>
+                <a href="#" class="btn btn-primary">Confira Já!</a>
+            </div>
+        </div>
+    }
+    
+
+}
 
 
 

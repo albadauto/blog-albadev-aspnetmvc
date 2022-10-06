@@ -1,4 +1,5 @@
 ﻿using BlogDoDautin.Models;
+using BlogDoDautin.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,16 +7,15 @@ namespace BlogDoDautin.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly INewsRepository _repository;
+        public HomeController(INewsRepository newsrepository)
         {
-            _logger = logger;
+            _repository = newsrepository;
         }
-
         public IActionResult Index()
         {
-            return View();
+            var result = _repository.getAllNews();
+            return View(result);
         }
 
         public IActionResult Privacy()

@@ -24,5 +24,15 @@ namespace BlogDoDautin.Repository
         {
             return _context.News.Where(x => x.UserId.Equals(UserId)).ToList();
         }
+
+        public List<NewsModel> getAllNews()
+        {
+            return _context.News.ToList();
+        }
+
+        public UserModel getAuthor(int? Id)
+        {
+            return _context.User.Where(x => x.Id.Equals(Id)).FirstOrDefault();
+        }
     }
 }

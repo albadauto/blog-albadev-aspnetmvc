@@ -1,7 +1,7 @@
 ﻿@inject IHttpContextAccessor context
 @model NewsModel
 @{
-    var session = context.HttpContext.Session.GetString("id_user");
+    var session = context.HttpContext.Session.GetInt32("id_user");
 }
 
 <div class="container bg-light">
@@ -16,19 +16,24 @@
             <div class="col">
                 <input class="form-control" placeholder="Titulo" asp-for="Title"/>
             </div>
-            <input asp-for="Author" value="teste" />
         </div>
         <div class="row">
             <div class="col">
-                <textarea class="form-control" placeholder="Descrição" asp-for="Description"> </textarea>
+                <textarea class="form-control" placeholder="Descrição" asp-for="Description" cols="10" rows="5"> </textarea>
             </div>
         </div>
-        <input type="hidden" value=@session asp-for="UserId"/>
-        <button type="submit" class="btn btn-success">Enviar</button>
-
+        <input type="hidden" value=@session asp-for="UserId"/> <br/>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </div>
     </form>
 
     @if(TempData["success"] != null){
-        <p>@TempData["success"]</p>
+        <div class="container">
+            <div class="alert alert-success">
+                <p>@TempData["success"]</p>
+            </div>
+        </div>
+        
     }
 </div>
