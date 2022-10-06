@@ -30,9 +30,18 @@ namespace BlogDoDautin.Repository
             return _context.News.ToList();
         }
 
-        public UserModel getAuthor(int? Id)
+        public bool DeleteNews(int id)
         {
-            return _context.User.Where(x => x.Id.Equals(Id)).FirstOrDefault();
+            NewsModel post = this.getById(id);
+            _context.News.Remove(post);
+            _context.SaveChanges();
+            return true;
+        }
+
+
+        public NewsModel getById(int id)
+        {
+            return _context.News.FirstOrDefault(x => x.Id == id);
         }
     }
 }

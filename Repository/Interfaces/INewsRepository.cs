@@ -7,5 +7,7 @@ namespace BlogDoDautin.Repository.Interfaces
         NewsModel createPost(NewsModel news);
         List<NewsModel> getAll(int? UserId);
         List<NewsModel> getAllNews();
+        bool DeleteNews(int id);
+        NewsModel getById(int id);
     }
 }

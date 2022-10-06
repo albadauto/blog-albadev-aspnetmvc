@@ -26,6 +26,7 @@ namespace BlogDoDautin.Controllers
                 {
                     //Id do usuário na sessão SEMPRE deverá ser do tipo INT
                     HttpContext.Session.SetInt32("id_user", result.Id);
+                    HttpContext.Session.SetString("username", result.Username);
                     return RedirectToAction("Index", "Home");
                 }
                 else

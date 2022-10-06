@@ -17,5 +17,20 @@ namespace BlogDoDautin.Controllers
             List<NewsModel> news = _repo.getAll(HttpContext.Session.GetInt32("id_user"));
             return View(news);
         }
+
+        public IActionResult DeleteNews(int id)
+        {
+            var resultDelete = _repo.DeleteNews(id);
+            if (resultDelete)
+            {
+                TempData["deleteSuccess"] = "Deletado com sucesso";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData["deleteError"] = "Não existe esse post";
+                return RedirectToAction("Index");
+            }
+        }
     }
 }
