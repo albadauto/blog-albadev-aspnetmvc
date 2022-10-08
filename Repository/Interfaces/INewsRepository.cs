@@ -9,5 +9,6 @@ namespace BlogDoDautin.Repository.Interfaces
         List<NewsModel> getAllNews();
         bool DeleteNews(int id);
         NewsModel getById(int id);
+        NewsModel EditPost(NewsModel modelToEdit);
     }
 }

@@ -1,8 +1,32 @@
-﻿@*
+﻿@model NewsModel
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
 
+<div class="container">
+    <h3 class="display-6 text-center">Editar Post</h3>
 
-<p>Editar o trampo</p>
+    <div class="bg bg-light">
+        <form method="post" asp-controller="ShowPost" asp-action="EditNotice">
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="text" class="form-control" asp-for="Title" />
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" asp-for="Author" />
+                </div>
+                <input type="hidden" asp-for="Id" />
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <textarea cols="40" rows="10" class="form-control" asp-for="Description"></textarea>
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Editar</button>
+        </form>
+    </div>
+</div>
+

@@ -1,4 +1,5 @@
-﻿using BlogDoDautin.Repository.Interfaces;
+﻿using BlogDoDautin.Models;
+using BlogDoDautin.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogDoDautin.Controllers
@@ -18,7 +19,14 @@ namespace BlogDoDautin.Controllers
 
         public IActionResult Edit(int id)
         {
-            return View();
+            var result = _newsrepository.getById(id);
+            return View(result);
+        }
+        [HttpPost]
+        public IActionResult EditNotice(NewsModel newsModel)
+        {
+            _newsrepository.EditPost(newsModel);
+            return RedirectToAction("Index", "MyPosts");
         }
     }
 }

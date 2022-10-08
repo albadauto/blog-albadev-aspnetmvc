@@ -38,6 +38,18 @@ namespace BlogDoDautin.Repository
             return true;
         }
 
+        public NewsModel EditPost(NewsModel modelToEdit)
+        {
+            var result = getById(modelToEdit.Id);
+            if (result == null) throw new Exception("Erro!");
+            result.Title = modelToEdit.Title;
+            result.Author = modelToEdit.Author;
+            result.Description = modelToEdit.Description;
+            _context.News.Update(result);
+            _context.SaveChanges();
+            return result;
+        }
+
 
         public NewsModel getById(int id)
         {

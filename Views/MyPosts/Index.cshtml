@@ -29,6 +29,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Titulo</th>
                 <th scope="col">Descrição</th>
+                <th scope="col">Autor</th>
                 <th></th>
             </tr>
         </thead>
@@ -38,8 +39,10 @@
                     <td>@post.Id</td>
                     <td>@post.Title</td>
                     <td>@post.Description</td>
+                    <td>@post.Author</td>
+
                     <td>
-                        <a asp-controller="ShowPost" asp-controller="Index" asp-route-id=@post.Id class="btn btn-primary">Editar</a>
+                        <a asp-controller="ShowPost" asp-action="Edit" asp-route-id=@post.Id class="btn btn-primary">Editar</a>
                         <a class="btn btn-danger" asp-controller="MyPosts" asp-action="DeleteNews" asp-route-id=@post.Id>Excluir</a>
                     </td>
                 </tr>
