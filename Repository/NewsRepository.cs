@@ -27,7 +27,7 @@ namespace BlogDoDautin.Repository
 
         public List<NewsModel> getAllNews()
         {
-            return _context.News.ToList();
+            return _context.News.OrderByDescending(o => o.Id).ToList();
         }
 
         public bool DeleteNews(int id)

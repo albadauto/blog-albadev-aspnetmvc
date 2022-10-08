@@ -39,7 +39,7 @@
                     <td>@post.Title</td>
                     <td>@post.Description</td>
                     <td>
-                        <button class="btn btn-primary">Editar</button>
+                        <a asp-controller="ShowPost" asp-controller="Index" asp-route-id=@post.Id class="btn btn-primary">Editar</a>
                         <a class="btn btn-danger" asp-controller="MyPosts" asp-action="DeleteNews" asp-route-id=@post.Id>Excluir</a>
                     </td>
                 </tr>
