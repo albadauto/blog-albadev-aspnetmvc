@@ -26,20 +26,21 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
                         @if(session != null)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-controller="News" asp-action="Index">Criar novo post</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Login" asp-action="RemoveSession">Logoff</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-controller="MyPosts" asp-action="Index">Meus posts</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="SendEmail" asp-action="Index">Enviar Email</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Login" asp-action="RemoveSession">Logoff</a>
+                            </li>
+                            
                         }else
                         {
                             <li class="nav-item">
